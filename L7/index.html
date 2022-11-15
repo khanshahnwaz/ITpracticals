@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Lab 7</title>
+    <style>
+        .btn:hover {
+            background-color: gray;
+            color: green;
+            cursor: pointer;
+        }
+
+        tr {
+            border: 1px solid black;
+            background-color: gray;
+            color: black;
+            font-size: large;
+        }
+    </style>
+
+    <script>
+        function loadData() {
+            var header = "<tr>" + "<th>" + "Name" + "</th>" + "<th>" + "Age" + "</th>" + "<th>" + "Type" + "</th>" + "<th>" + "Weight" + "</th>" + "<th>" + "Likes" + "</th>" + "</tr>"
+            var req = new XMLHttpRequest();
+            // onreadystatechange executes the function when readystate is changed.
+            req.onreadystatechange = function () {
+                // readystate==4 means request finished & response has been received and status 200 indicates OK
+                if (this.readyState == 4 && this.status == 200) {
+                    var d = this.responseText;
+                    var data = JSON.parse(d);
+                    data.map((i) => {
+                        header += "<tr>" + "<td>" + i.name + "</td>" + "<td>" + i.age + "</td>" + "<td>" + i.type + "</td>" + "<td>" + i.weight + "</td>" + "<td>" + i.likes + "<tr>" + "</tr>"
+                    })
+                    document.getElementById('result').innerHTML = header;
+
+                }
+            } 
+            // req.open(Method(GET/POST),url,asynchronus(true/false))
+            req.open('GET', 'data.json', true);
+            // req.send() Sends the request to the server (used for GET)
+            req.send()
+        }
+    </script>
+</head>
+
+<body style="background-image: linear-gradient( to right,lightblue, lightgreen);">
+    <div class="container">
+        <div style="text-align:center;">
+            <h1>Practical 7</h1>
+            <h2>Shahnwaz Khan </h2>
+
+        </div>
+        <div style="text-align: left; width:50%; margin:auto;font-size:large;letter-spacing:1px;">
+            Store JSON data of few pets that you created in previous practical in a JSON file (copy from
+            console output of previous program to a .json file). Using AJAX, load data from the file and
+            display it in a presentable way using HTML and CSS
+        </div>
+        <div style="position: absolute; top:30%;left:42%;">
+            <button style="text-align:center; padding:5px 10px; font-size:lage; color:black; border-radius: 10px;"
+                class="btn" onclick="loadData()">
+                Click here to load the Pet Data
+            </button>
+        </div>
+        <table id="result"
+            style="position:absolute; top:50%; left:25%; width:50%;height:40%; text-align:left;border:2px dashed black; border-radius:10px;">
+        </table>
+    </div>
+
+</body>
+
+</html>

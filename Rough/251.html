@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript &amp; jQuery - Chapter 6: Events - Event Attributes</title>
+    <!-- <link rel="stylesheet" href="css/c06.css" /> -->
+</head>
+<script>
+
+
+
+    // function checkUsername(e) { // Dec lare funct ion
+    //     // e.preventDefault();
+    //     var elMsg = document.getElementById('feedback'); // Get feedback element
+    //     var elUsername = document.getElementById('username');// Get username input
+    //     if (elUsername.value.length < 5) { // If username too short
+    //         elMsg.textContent = ' Username must be 5 characters or more'; // Set msg
+    //     }
+    //     else { //Otherwise
+    //         elMsg.textContent = ''; //Clear message
+    //     }
+    // }
+</script>
+
+<body>
+    <div id="page">
+        <h1>List King</h1>
+        <h2>New Account</h2>
+        <form>
+
+            <label for="username">Create a username: </label>
+            <!-- <input type="text" id="username" onblur="checkUsername()" /> -->
+            <input type="text" id="username" onblur="checkLength(5)" />
+
+            <div id="feedback"></div>
+
+
+            <label for="password">Create a password: </label>
+            <input type="password" id="password" />
+
+            <input type="submit" value="sign up!" />
+
+
+        </form>
+    </div>
+    <script>
+        // var elUsername = document. getElementById('username') ; // Get username input 
+        //  elUsername.onblur = checkUsername; // When it l oses focus call checkuserName()
+
+        //         var elUsername = document .getElementById('username') ; // Get username i nput 
+        // // When it loses focus call checkUsername() 
+        // elUsername.addEventListener('blur' , checkUsername , false) ;
+
+        const elMsg = document.getElementById('feedback')
+        function checkLength(e, minLength) {         // Declare function
+            var el, elMsg;                             // Declare variables
+            if (!e) {                                  // If event object doesn't exist
+                e = window.event;                        // Use IE fallback
+            }
+            el = e.target || e.srcElement;             // Get target of event
+            //elMsg = el.nextSibling;                    // Get its next sibling
+
+            if (el.value.length < minLength) {         // If length is too short set msg
+                elMsg.innerHTML = 'Username must be ' + minLength + ' characters or more';
+            } else {                                   // Otherwise
+                elMsg.innerHTML = '';                    // Clear message
+            }
+        }
+
+        var elUsername = document.getElementById('username');// Get username input
+        if (elUsername.addEventListener) {           // If event listener supported
+            elUsername.addEventListener('blur', function (e) {  // On blur event
+                // NOTE: This function is checkLength() - not checkUsername()
+                checkLength(e, 5);                             // Call checkLength()
+            }, false);                                       // Capture in bubble phase
+        } else {                                           // Otherwise
+            elUsername.attachEvent('onblur', function (e) {   // IE fallback onblur
+                // NOTE: This function is checkLength() - not checkUsername()
+                checkLength(e, 5);                             // Call checkLength()
+            });
+        }
+    </script>
+</body>
+
+</html>

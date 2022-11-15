@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lab5</title>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      background-color: #2196F3;
+      padding: 10px;
+    }
+
+    .grid-item {
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      font-size: 30px;
+      text-align: center;
+    }
+  </style>
+
+</head>
+
+<body style="background-image: linear-gradient(to bottom,rgb(0, 208, 255),rgb(215, 223, 217));">
+  <div style="position: relative; top:20vh;">
+    <div id="stn" style="margin-bottom: 20px;">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque atque sed placeat quos voluptatibus alias! Eos
+      assumenda beatae, necessitatibus vero exercitationem rerum culpa sit esse soluta, consequuntur tenetur quisquam
+      placeat debitis veritatis ab distinctio cumque molestias suscipit laboriosam fugiat! Rerum ea laboriosam
+      consectetur
+      natus veniam omnis maxime provident tempore aspernatur Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Libero, quae? Deserunt omnis libero, labore id unde eos. Vel blanditiis, ab tempora dolorum totam dolor
+      reprehenderit enim nisi magni illo, et quisquam minima, delectus culpa harum quibusdam repudiandae neque! Dolores,
+      inventore Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium eum inventore dicta minima unde
+      impedit omnis ex soluta mollitia consequatur expedita est itaque quod, aliquam quia velit hic asperiores debitis
+      quam officiis nisi sed corporis quos? Voluptates id aliquid sapiente quisquam voluptate hic nostrum vitae numquam,
+      totam, facere consectetur officiis?</div>
+    <div class="grid-container">
+      <div class="grid-item" onclick="document.getElementById('stn').style.color='red';">Red</div>
+      <div class="grid-item" onclick="document.getElementById('stn').style.color='green';">Green</div>
+      <div class="grid-item" onclick="document.getElementById('stn').style.color='blue';">Blue</div>
+      <div class="grid-item" onclick="document.getElementById('stn').style.fontSize='10px';">10</div>
+      <div class="grid-item" onclick="document.getElementById('stn').style.fontSize='20px';">20</div>
+      <div class="grid-item" onclick="document.getElementById('stn').style.fontSize='30px';">30</div>
+      <div class="grid-item" onclick="document.getElementById('stn').style.fontFamily='Sans';">Sans</div>
+      <div class="grid-item" onclick="document.getElementById('stn').style.fontFamily='monoSpace';">Mono Space</div>
+      <div class="grid-item" onclick="document.getElementById('stn').style.fontFamily='Georgia'">Georgia</div>
+    </div>
+  </div>
+</body>
+
+</html>

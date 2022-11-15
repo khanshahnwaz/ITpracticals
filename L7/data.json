@@ -1,0 +1,6 @@
+[
+    {"name":"Tommy","age":"3","type":"Dog","weight":"30","likes":"Walking"},
+    {"name":"Raj","age":"5","type":"Snake","weight":"30","likes":"Eating"},
+    {"name":"Shera","age":"9","type":"Lion","weight":"30","likes":"Sleeping"},
+    {"name":"Rocky","age":"2","type":"Leopard","weight":"30","likes":"Biting"}
+]

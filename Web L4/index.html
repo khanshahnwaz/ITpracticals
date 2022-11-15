@@ -1,0 +1,178 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>Lab 6</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+
+    <div class="flex absolute top-[100px] left-[18%]  bg-white rounded-lg shadow-2xl p-10 w-[60%] z-40 ">
+        <!-- {/* left division */} -->
+        <div class="h-[700px] bg-[#7e22ce] w-[350px] border-white rounded-lg shadow-lg ">
+            <p class="text-left text-base font-bold text-white pl-10 mt-4">IT</p>
+            <p class="text-4xl tracking-wider text-left mt-10 p-10 text-white font-bold">Share your <br /> professional
+                details
+                with us</p>
+            <p class="text-sm mt-2 text-left px-10 text-gray-200">This is practical lab 4 of Information Technology.</p>
+            <div
+                class=" mt-44  py-5 px-5 pb-4 mx-10 bg-[#5c1e7e] text-base font-bold  text-left text-gray-200 h-32 rounded-lg shadow-lg">
+                Your data is secured.
+            </div>
+        </div>
+        <!-- {/* right division */} -->
+        <div class="bg-white h-[700px] w-[500px] ">
+            <div class='mt-0 px-10 pt-0 mb-0 '>
+                <p class='text-left text-4xl font-bold tracking-wide text-[#7e22ce]'>Job Data Record</p>
+                <p class='mt-2 text-sm tracking-wide text-left font-semibold'>Why should we hire you?
+                </p>
+
+            </div>
+            <!-- <img src={remove} alt='remove' class='float-right relative -top-60 -right-32 hover:opacity-10' -->
+            <!-- onClick={navigateToHome} /> -->
+            <div class='-mt-4 p-10 pt-5 '>
+                <!-- //{/* Form section */} -->
+
+                <form id="formData">
+                    <label for='name' class='float-left text-[#7e22ce] font-bold'>Name</label><br />
+                    <input type='text' class='rounded border-2 border-[#7e22c3] float-left mt-1 w-[70%]' name='name'
+                        required />
+
+                    <br />
+                    <span id="name" class="text-red-500 text-left float-left relative"></span>
+
+                    <br />
+
+                    <label for='age' class='float-left text-[#7e22ce] font-bold'>Age</label><br />
+                    <input type='number' class='rounded border-2 border-[#7e22c3] float-left mt-1 w-[70%]' name='age'
+                        required min="20" max="40"></input>
+                    <br /><br />
+                    <label for='gender' class='float-left text-[#7e22ce] font-bold'>Gender</label><br />
+                    <div class='inline-block rounded border-2 border-[#7e22c3] float-left mt-1 py-1 px-5 mr-4'>
+                        <input type="radio" id="male" name="gender"
+                            class='rounded border-2 border-[#7e22c3] float-left mt-1' value='male' />
+                        <label for="male" class='float-left mr-2 text-[#7e22ce] font-bold'>Male</label>
+                    </div>
+                    <div class='inline-block rounded border-2 border-[#7e22c3] float-left mt-1 py-1 px-5'>
+                        <input type="radio" id="female" name="gender"
+                            class='rounded border-4 border-[#7e22c3] float-left mt-1' value='female' />
+                        <label for="female" class='float-left text-[#7e22ce] font-bold'>Female</label>
+                    </div>
+
+                    <br /><br />
+                    <label for='graduation' class='float-left text-[#7e22ce] font-bold'>Graudation Year</label><br />
+                    <select name="graduation" class='rounded border-2 border-[#7e22c3] float-left mt-1 w-[70%]'>
+                        <option value="null">Select</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>2
+                    </select>
+                    <br /><span id="graduation" class="text-red-500 text-left float-left"></span><br />
+                    <label for='marks' class='float-left text-[#7e22ce] font-bold'>Marks of qualifying exam(In
+                        CGPA)</label><br />
+                    <input type='number' class='rounded border-2 border-[#7e22c3] float-left mt-1 w-[70%]' name='marks'
+                        required min="5" max="10"></input>
+                    <br /><br />
+                    <label for='experience' class='float-left text-[#7e22ce] font-bold'>Work Experience</label><br />
+                    <select name="experience" class='rounded border-2 border-[#7e22c3] float-left mt-1 w-[70%]'>
+                        <option value="null">Select</option>
+                        <option value="0-1">0-1 year</option>
+                        <option value="1-2">1-2 year</option>
+                        <option value="3-5">3-5 year</option>
+                        <option value="5-8">5-8 year</option>
+                    </select>
+                    <br />
+                    <span id="experience" class="text-red-500 text-left float-left"></span><br />
+
+                    <br />
+
+                    <label for='role' class='float-left text-[#7e22ce] font-bold'>Role and position in last
+                        job</label><br />
+                    <input type='text' class='rounded border-2 border-[#7e22c3] float-left mt-1 w-[70%]' name='role'
+                        required></input> 
+
+                    <br />
+                    <span id="role" class="text-red-500 text-left float-left"></span><br />
+                    <label for='resume' class='float-left text-[#7e22ce] font-bold'>Please upload your
+                        resume.</label><br />
+                    <input type='file' class='rounded border-2 border-[#7e22c3] float-left mt-1 w-[70%]' name='resume'
+                        required></input>
+
+                    <br />
+                    <span id="resume" class="text-red-500 text-left float-left"></span><br />
+                    <div class="flex justify-between mr-32">
+                        <button type='submit'
+                            class=' font-bold float-left cursor-pointer bg-[#7e22c3] text-white py-2 px-5 rounded '>Submit</button>
+
+                        <button type='reset'
+                            class=' font-bold float-left cursor-pointer bg-[#7e22c3] text-white py-2 px-5 rounded '>Reset</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        formData.onsubmit = (e) => {
+            let flag=true;
+            e.preventDefault();
+            console.log("hi iam here,")
+            const Data = new FormData(formData);
+            //   initialize an empty object 
+            const formDataObj = {};
+            Data.forEach((value, key) => (formDataObj[key] = value));
+            console.log("Object form data ", formDataObj);
+            const name = document.getElementById('name');
+            const age = document.getElementById('age')
+            const gender = document.getElementById('gender')
+            const graduation = document.getElementById('graduation')
+            const experience = document.getElementById('experience')
+            const marks = document.getElementById('marks');
+            const role = document.getElementById('role')
+            const resume = document.getElementById('resume')
+            // Name validation
+            console.log(formDataObj.name)
+            if (formDataObj.name.length < 4) {
+                flag=false;
+                name.innerHTML = '*Must contains atleast 3 characters.'
+            }else name.innerHTML=''
+            console.log(formDataObj.age)
+
+            // Age validation
+
+            // marks validation 
+            if(formDataObj.graduation=='null'){
+                flag=false;
+
+                graduation.innerHTML='*Please select.'
+            }else graduation.innerHTML=''
+
+            // role validation
+            if (formDataObj.role.length < 10) {
+                flag=false;
+
+                role.innerHTML = '*Must contains atleast 10 characters.'
+            }else role.innerHTML=''
+            // file format validation 
+            console.log(formDataObj.resume)
+            const format = formDataObj.resume.name.split('.');
+            const extension = format[format.length - 1]
+            console.log(extension)
+            if (extension != 'pdf' || extension != 'docx') {
+                flag=false;
+                resume.innerHTML = '*Invalid format.'
+            }else resume.innerHTML=''
+        if(flag){
+            alert("Form submitted successfully.")
+        }
+
+        };
+    </script>
+
+</body>
+
+</html>

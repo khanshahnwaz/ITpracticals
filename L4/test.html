@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root" style="margin-top:80px; background-image: linear-gradient(to top,rgb(2, 149, 100),white,rgb(214, 45, 45));">
+        <p class="table" style="color: rgb(54, 43, 43); font-size: 14px;"></p>
+        <p class="table" style="color: green; font-size: 17px;"></p>
+        <p class="table" style="color: blue; font-size: 20px;"></p>
+        <p class="table" style="color: rgb(106, 50, 50); font-size: 22px;"></p>
+        <p class="table" style="color: rgb(92, 36, 145); font-size: 25px;"></p>
+        <p class="table" style="color: rgb(57, 126, 158); font-size: 27px;"></p>
+        <p class="table" style="color: rgb(48, 82, 196); font-size: 30px;"></p>
+        <p class="table" style="color:rgb(0, 20, 53); font-size: 32px;"></p>
+        <p class="table" style="color:rgb(33, 15, 24); font-size: 34px;"></p>
+
+    </div>
+    <script>
+
+        let interval = setInterval(table, 1000);
+        // counter for paragraphs.There are nine paragraphs.It will go from 0 to 8
+        let count = 0;
+        // Initalize the counter for table.It will go from 2 to 10
+        let counter=2;
+        //  console.log(count)
+        function table() {
+            // string literal for storing result.
+            let te=``;
+            if (count > 8) {
+                console.log("i am supposed to stop now.")
+                clearInterval(interval);
+            } else {
+               for(let j=1;j<11;j++){
+            te+=`${counter}*${j} =${counter*j}&nbsp;  `;
+               }
+               document.getElementsByClassName('table')[count].innerHTML=te;
+               count++;
+               counter++;
+           }
+    
+        }
+    
+    </script>
+</body>
+</html>
